@@ -1,4 +1,4 @@
-// 1. check if a linked list is a palindrome or not
+// 1. check if a linked list is a palindrome or not--------------------------------------------------------------
 
 class ListNode {
     constructor(val, next = null) {
@@ -51,7 +51,7 @@ class ListNode {
 
 
 
-  // 2. remove duplicates from a sorted linked list
+  // 2. remove duplicates from a sorted linked list----------------------------------------------------------------
 
 
 
@@ -80,7 +80,7 @@ class ListNode {
   
 
 
-  //3.  detect if a linked list has a cycle or is circular
+  //3.  detect if a linked list has a cycle or is circular------------------------------------------------------------------
 
 
   class ListNode {
@@ -192,7 +192,7 @@ if (intersectionNode !== null) {
 }
 
 
-//4 find the nth node from the end of a linked list
+//4 find the nth node from the end of a linked list----------------------------------------------------------------------------
 
     // Node class for a linked list
 class ListNode {
@@ -246,6 +246,38 @@ if (nthNodeFromEnd !== null) {
 } else {
   console.log(`The linked list has less than ${n} nodes`);
 }
+
+//5find the middle node of a linked list in a single pass----------------------------------------------------------------
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function findMiddleNode(head) {
+  let slow = head;
+  let fast = head;
+
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  return slow;
+}
+
+// Create a linked list: 1 -> 2 -> 3 -> 4 -> 5 -> null
+const head = new Node(1);
+head.next = new Node(2);
+head.next.next = new Node(3);
+head.next.next.next = new Node(4);
+head.next.next.next.next = new Node(5);
+
+const middleNode = findMiddleNode(head);
+console.log(middleNode.value); // Output: 3
+
 
 
   

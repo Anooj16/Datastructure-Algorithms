@@ -158,4 +158,47 @@ const findSmallestMissingPositive = (nums) => {
       const nums = [2, 0, 1, 2, 1, 0];
       sortColors(nums);
       console.log("Sorted Array:", nums);
+
+
+
+ //5  rotate an array to the right by a given number of steps----------------------------------------------------------------------
+ 
+      //Method 1: Using Array Slicing
+
+      function rotateArrayRight(arr, steps) {
+        const rotated = arr.slice(); // Create a copy of the original array
+      
+        // Perform the rotation steps
+        for (let i = 0; i < steps; i++) {
+          const lastElement = rotated.pop();
+          rotated.unshift(lastElement);
+        }
+      
+        return rotated;
+      }
+      
+      const array = [1, 2, 3, 4, 5];
+      const steps = 2;
+      const rotatedArray = rotateArrayRight(array, steps);
+      console.log(rotatedArray); // Output: [4, 5, 1, 2, 3]
+      
+
+      //Method 2: Using Array.prototype.splice()---------------------------
+
+      function rotateArrayRight(arr, steps) {
+        const rotated = arr.slice(); // Create a copy of the original array
+      
+        // Perform the rotation steps
+        for (let i = 0; i < steps; i++) {
+          const lastElement = rotated.splice(-1, 1)[0];
+          rotated.unshift(lastElement);
+        }
+      
+        return rotated;
+      }
+      
+      const arrayy = [1, 2, 3, 4, 5];
+      const stepss = 2;
+      const rotatedArrayy = rotateArrayRight(arrayy, stepss);
+      console.log(rotatedArrayy); // Output: [4, 5, 1, 2, 3]
       
